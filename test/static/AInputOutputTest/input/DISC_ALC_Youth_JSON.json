@@ -1,0 +1,41 @@
+{
+  "Name": "DISC_ALC_Youth",
+  "Type": "assessment",
+  "Properties": {
+    "Type": "netscid",
+    "Version": "1.0.0.1",
+	"StaticNameCode" : "DISC_ALC_Youth"
+  },
+  "SubEntities": [
+    {
+      "Name": "DISC_ALC_Youth",
+      "Type": "fixedlengthblock",
+      "Properties": {"module" : "Alcohol (Youth)"},
+      "SubEntities": [
+        {
+          "Name": "DISC_ALC_Youth",
+          "Type": "netsciditembank",
+          "Properties": {},
+          "SubEntities": [
+			{
+              "Name" : "yalq001",
+              "Type" : "radio",
+              "Properties" : {
+                "AllowBlankResponse": "False",
+                "PageBreak": "True",
+                "PostFormula" : "Branching.Set(\"0>EOM\");",
+                "PageHeader": "Alcohol (Youth)",
+                "FullHeading": "<b>ALCOHOL: Youth</b>",
+                "ReadAloud": "The next questions are about your use of alcohol – beer, wine, wine coolers, or hard liquors like vodka, gin, or whiskey. Each can or bottle of beer, glass of wine or wine cooler, shot of liquor, or mixed drink with liquor in it counts as one drink.<br><br>Not including sips from another person’s drink, have you ever, in your whole life, even once, had a drink?",
+                "SummaryHeading" : "Alcohol",
+                "Description" : "",
+                "ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+              },
+              "SubEntities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

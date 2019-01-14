@@ -1,0 +1,14 @@
+__pycache__
+/.idea
+.DS_Store
+*~$*
+env/
+dev/
+logs/
+tags
+ignored/
+*.swp
+.env
+redis-stable/
+temp/
+temp_uploads/
