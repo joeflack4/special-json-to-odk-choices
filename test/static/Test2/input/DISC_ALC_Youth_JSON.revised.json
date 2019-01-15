@@ -1,0 +1,2445 @@
+﻿{
+  "Name": "DISC_ALC_Youth",
+  "Type": "assessment",
+  "Properties": {
+    "Type": "netscid",
+    "Version": "1.0.0.1",
+	"StaticNameCode" : "DISC_ALC_Youth"
+  },
+  "SubEntities": [
+    {
+      "Name": "DISC_ALC_Youth",
+      "Type": "fixedlengthblock",
+      "Properties": {"module" : "Alcohol (Youth)"},
+      "SubEntities": [
+        {
+          "Name": "DISC_ALC_Youth",
+          "Type": "netsciditembank",
+          "Properties": {},
+          "SubEntities": [
+			{
+			"Name" : "yalq001",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>EOM\");",
+				"PageHeader": "Alcohol (Youth)",
+				"FullHeading": "<b>ALCOHOL: Youth</b>",
+				"ReadAloud": "The next questions are about your use of alcohol – beer, wine, wine coolers, or hard liquors like vodka, gin, or whiskey. Each can or bottle of beer, glass of wine or wine cooler, shot of liquor, or mixed drink with liquor in it counts as one drink.   Not including sips from another person’s drink, have you ever, in your whole life, even once, had a drink?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+			{
+			"Name" : "yalq001a",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "How old were you the first time you had a drink?",
+                "Advice": "CODE AGE",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+              "SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq001a_1",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "IF [AGE/GRADE] GIVEN WAS CHILD’S CURRENT [AGE/GRADE], GO TO Q 1D   IF [AGE/GRADE] GIVEN WAS CHILD’S CURRENT [AGE/GRADE] MINUS 1, GO TO Q 1B   ALL OTHERS, GO TO Q 1C",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "IF AGE NOT KNOWN, ASK: What grade were you in?",
+                "Advice": "CODE GRADE (44 = PRE-K, 55 = KINDERGARTEN, 13 = COLLEGE FRESHMAN, 14 = SOPHOMORE, 15 = JUNIOR, 16 = SENIOR, 17 = POST B.A.)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+              "SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq001b",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq001d\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Was that more than a year ago – that is, before [[NAME EVENT]/ [NAME CURRENT MONTH] of last year]?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq001c",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq001e\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "TNow, think about the last year – that is, since [[NAME EVENT]/[NAME CURRENT MONTH] of last year]. Have you had a drink in the last year?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq001d",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq001g\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year, were there six or more days when you had a drink?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq001e",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>EOM\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Thinking about your whole life, were there six or more days when you had a drink?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq001f",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+           	   	"PageBreak": "True",
+			"PostFormula" : "Branching.Set(\"0>EOM 2>yalq036\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Was there ever a single year when you drank on six or more days?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq001g",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year, about how many weeks did you have something to drink? Was it almost every week … more than half the weeks … about half the weeks … one week a month … or less than one week a month?",
+                "ReadSilently" : "INTERVIEWER: Stop at first 'yes.'",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"Almost every week (48–52)\",\"Label\":\"Almost every week (48–52)\",\"NumericValue\":5},{\"ToolTip\":\"More than half the weeks (30–47)\",\"Label\":\"More than half the weeks (30–47)\",\"NumericValue\":4},{\"ToolTip\":\"About half the weeks (23–29)\",\"Label\":\"About half the weeks (23–29)\",\"NumericValue\":3},{\"ToolTip\":\"On average, at least one week a month (12–26)\",\"Label\":\"On average, at least one week a month (12–26)\",\"NumericValue\":2},{\"ToolTip\":\"Less than one week a month (1–11)\",\"Label\":\"Less than one week a month (1–11)\",\"NumericValue\":1},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"Refuse to answer\",\"NumericValue\":7},{\"ToolTip\":\"Don’t know\",\"Label\":\"Don’t know\",\"NumericValue\":9},]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq001h",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalq001j\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you have something to drink in the last four weeks – that is, since [[NAME EVENT]//the beginning of/the middle of/the end of [LAST MONTH]]?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq001i",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When did you last have a drink?",
+                "Advice": "CODE MONTH (00 = CURRENT MONTH)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq001j",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "During weeks in the last year when you’ve had something to drink, how many drinks in total would you usually have from Friday through Sunday – adding together beers, glasses of wine, straight or mixed liquor, and wine coolers?",
+                "Advice": "CODE NUMBER OF DRINKS (66 = 66 OR MORE DRINKS)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq001k",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "And how many drinks would you usually have in total from Monday through Thursday?",
+                "Advice": "CODE NUMBER OF DRINKS (66 = 66 OR MORE DRINKS)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq001l",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year, was there ever a time when you had at least 4 drinks within a 2-3 hour period?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq001m",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "What is the most amount of drinks you’ve had within a 2-3-hour period?",
+                "Advice": "CODE NUMBER OF DRINKS (66 = 66 OR MORE DRINKS)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq001n",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year, was there ever a month when you drank on at least six days?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq001o",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "How old were you the first time you got drunk – that is, your speech was slurred or you were unsteady on your feet?",
+                "Advice": "CODE AGE (88 = NEVER)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq001o_1",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "IF AGE NOT KNOWN, ASK: What grade were you in?",
+                "Advice": "CODE GRADE (44 = PRE-K, 55 = KINDERGARTEN, 13 = COLLEGE FRESHMAN, 14 = SOPHOMORE, 15 = JUNIOR, 16 = SENIOR, 17 = POST B.A.)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalnote01",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>EOM\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "THIS IS AN OPTIONAL SKIP  WOULD YOU LIKE TO ASK ABOUT CRITERIA FOR ALCOHOL USE DISORDER?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq002",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+ 				"PostFormula" : "Branching.Set(\"0>yalq003\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year – that is, since [NAME CURRENT MONTH] of last year – did you miss [school/work] to go drinking or because you were hungover?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq002a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you miss [school/work] more than once because of drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq003",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq004\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(In the last year),</i> did you go to [school/work] right after you had been drinking or drink while you were at [school/work]?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq003a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you do this more than once?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq004",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq005\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(In the last year),</i> did you get into trouble at [school/work] or did you have problems [with your schoolwork/doing your job] because of drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq004a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did this happen more than once?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq005",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalnote02\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year, did you drink before you did something important or while you were doing something important ... like babysitting or working?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq005a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you do this more than once?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalnote02",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+ 				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "WERE ONE OR MORE § RESPONSES OR TWO OR MORE * RESPONSES CODED IN Q 2–5?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq006",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq007\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(In the last year),</i> did you get into arguments with your family or friends because of how you act when you drink?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq006a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "Even though you had problems with your family or friends, did you drink anyway?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq007",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq008\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "<i>(In the last year, (that is, since [NAME CURRENT MONTH] of last year)),</i> did any of your friends not want to be with you because of the way you act when you are drinking?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq007a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "Even though your friends didn’t want to be with you, did you drink anyway?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq008",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalnote03\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "In the last year, did you get into any physical ﬁghts when you had been drinking?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq008a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalnote03\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "Did this happen more than once?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq008b",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Even though you got into physical fights, did you drink alcohol anyway?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalnote03",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+ 				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "WERE ONE OR MORE § RESPONSES CODED IN Q 6–8?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq009",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq010\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "<i>(In the last year),</i> did you ever drink in situations where you could get hurt, like right before or while you were riding a bike, swimming or driving a car or motorcycle?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq009a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "Did you do this more than once?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq010",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq011\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "<i>(In the last year),</i> did you get in trouble with the police when you were drunk or because you had been drinking?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq010a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "Did this happen more than once?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq011",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalq012\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year – that is, since [NAME CURRENT MONTH] of last year – did you often drink more than you intended to?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq011a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "Did you often end up drinking for a longer time than you had planned?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq012",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "<i>(In the last year),</i> have you often felt that you should quit or cut down on your drinking?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq013",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq014\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "<i>(In the last year),</i> did you ever try to quit or cut down on drinking?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq013a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq014\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "When you tried to quit or cut down on drinking, did you ever find that you were unable to do so?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq013b",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did this happen more than once?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq014",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalq015\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(In the last year),</i> could you drink a lot more alcohol than you used to before you got drunk?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq014a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did it seem like the same amount had less effect on you?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq015",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalq016\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year, were there many days when you felt sick or hungover after drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq015a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalq016\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year, did you spend a lot of your time drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq015b",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year, did you spend a lot of time planning how you would get alcohol?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq016",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalq017\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(In the last year, (that is, since [NAME CURRENT MONTH] of last year)),</i> did you feel such a strong desire or urge to drink that you could not keep from drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq016a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you ever want a drink so badly that you could not think about anything else?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq017",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "IF NOT ENROLLED IN SCHOOL OR HOMESCHOOL OR DOES NOT HAVE A JOB GO TO Q 19.  ALL OTHERS, CONTINUE",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(In the last year),</i> were there important social or recreational things you cut down on or did not do because of drinking, for example, things like participating in hobbies or sports or going to social or family events?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq018",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalnote04\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Were there important things at [school/work] that you didn’t do because of drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq018a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you stop going to [school/work] because of drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalnote04",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "WERE ONE OR MORE § RESPONSES CODED IN Q 17–18?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq019",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq020\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year, did drinking cause you to have any physical health problems or did drinking make a health problem worse?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq019a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you continue drinking even though it was causing you a physical problem?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq020",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq021\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(In the last year),</i> did drinking cause you to get sad or depressed or very irritable?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq020a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you continue to drink even though it made you feel this way?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq021",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalnote05\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(In the last year),</i> did you ever discover you couldn’t remember things you had said or done while you were drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq021a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did this happen several times?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalnote05",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "WERE ONE OR MORE § RESPONSES CODED IN Q 19–21?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq022",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq023\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year, when you didn’t drink or when you cut down, did you feel bad or feel sick?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq022a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Now I want to ask you about things that may have happened in the last year when you didn’t drink or when you cut down on drinking.Did you become nervous or worried?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq022b",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When you didn’t drink or when you cut down, did you feel restless, like you couldn’t sit still?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq022c",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(When you didn’t drink or when you cut down),</i> did you feel your heart beating fast?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq022d",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(When you didn’t drink or when you cut down),</i> did you sweat a lot?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalnote06",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "WERE ONE OR MORE # RESPONSES CODED IN Q 22C OR 22D?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq022e",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When you didn’t drink or when you cut down on drinking, did you feel sick to your stomach or have to vomit or throw up?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq022f",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(When you didn’t drink or when you cut down),</i> did you have trouble sleeping?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              
+              {
+			"Name" : "yalq022g",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When you didn’t drink or when you cut down on drinking, did you get headaches?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              
+              {
+			"Name" : "yalq022h",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When you didn’t drink or when you cut down on drinking, did you feel weak?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq022i",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(When you didn’t drink or when you cut down),</i> did you ever have any ﬁts or seizures?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq022j",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalq022l\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When you didn’t drink or when you cut down on drinking, did your hands shake?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq022k",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "<i>(When you didn’t drink or when you cut down),</i> did your tongue tremble or did your eyes twitch?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq022l",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When you didn’t drink or when you cut down on drinking, did you see, feel, or hear things that other people couldn’t?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq023",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year – that is, since [NAME CURRENT MONTH] of last year – did you ever drink alcohol or take medicines like tranquilizers or sedatives so that you wouldn’t feel bad or sick after you had been drinking a lot?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalnote07",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "WERE 2 OR MORE RESPONSES CODED IN Q 22A–22L AND NOTE 6 OR ONE RESPONSE CODED IN Q23?   IF YES: INTERVIEWER: NAME THIS BACK AS [felt bad or sick when you didn’t drink or cut down/drank or took medicine to keep from feeling bad or sick] IN Q24",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq024",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "You said that in the last year you [NAME [ ] SYMPTOMS IN Q 2–20 AND NOTES 2-7].Now, what about the last four weeks?  In the last four weeks – that is, since [[NAME EVENT]//the beginning of/the middle of/the end of [LAST MONTH]] -- have you done things like this?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq025",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "How old were you the first time you [did things like that/felt like that] because of drinking?",
+                "Advice": "CODE AGE (66 = WHOLE LIFE, ALWAYS)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq025_1",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "IF [AGE/GRADE] GIVEN WAS CHILD’S CURRENT [AGE/GRADE], GO TO Q 26   IF [AGE/GRADE] GIVEN WAS CHILD’S CURRENT [AGE/GRADE] MINUS 1, GO TO Q 25  ALL OTHERS, GO TO Q 25B",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "IF AGE NOT KNOWN, ASK: What grade were you in?",
+                "Advice": "CODE GRADE (44 = PRE-K, 55 = KINDERGARTEN, 13 = COLLEGE FRESHMAN, 14 = SOPHOMORE, 15 = JUNIOR, 16 = SENIOR, 17 = POST B.A.)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq025a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq026\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Was that more than a year ago – that is, before [[NAME EVENT]/ [NAME CURRENT MONTH] of last year]?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq025b",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq026\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Since that first time, was there ever a time when you did not [do things like that/feel like that] because of drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq025c",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq026\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did that time when you weren’t [doing things/feeling] like this, last for two months or more?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq025d",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "You said that you [NAME [ ] SYMPTOMS IN Q 2–20 AND NOTES 2-7] in the last year. <br>   <br>How old were you when [doing things/feeling] like this began this time?",
+                "Advice": "CODE AGE (88 = NEVER STARTED AGAIN)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq025d_1",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "IF [AGE/GRADE] GIVEN WAS CHILD’S CURRENT [AGE/GRADE] MINUS 1, GO TO Q 25E   ALL OTHERS, GO TO Q 26",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "IF AGE NOT KNOWN, ASK: What grade were you in?",
+                "Advice": "CODE GRADE (44 = PRE-K, 55 = KINDERGARTEN, 13 = COLLEGE FRESHMAN, 14 = SOPHOMORE, 15 = JUNIOR, 16 = SENIOR, 17 = POST B.A.)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq025e",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you start to [do things like that/feel like that] again more than a year ago – that is, before [[NAME EVENT]/[NAME CURRENT MONTH] of the last year]?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq026",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq027\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Now I’d like you to think back to the time in the last year when drinking alcohol caused the most problems.At that time, did your [CARETAKERS] seem annoyed or upset with you because you were drinking alcohol?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq026a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "How often did your [CARETAKERS] seem annoyed or upset with you because of this? Would you say: a lot of the time, some of the time, or hardly ever?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"A lot of the time\",\"Label\":\"A lot of the time\",\"NumericValue\":3},{\"ToolTip\":\"Some of the time\",\"Label\":\"Some of the time\",\"NumericValue\":2},{\"ToolTip\":\"Hardly ever\",\"Label\":\"Hardly ever\",\"NumericValue\":1},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"Refuse to answer\",\"NumericValue\":7},{\"ToolTip\":\"Don’t know\",\"Label\":\"Don’t know\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq027",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq028\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When the problems were worst, did drinking alcohol keep you from doing things or going places with your family?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq027a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "How often did drinking alcohol keep you from doing things or going places with your family? Would you say: a lot of the time, some of the time, or hardly ever?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"A lot of the time\",\"Label\":\"A lot of the time\",\"NumericValue\":3},{\"ToolTip\":\"Some of the time\",\"Label\":\"Some of the time\",\"NumericValue\":2},{\"ToolTip\":\"Hardly ever\",\"Label\":\"Hardly ever\",\"NumericValue\":1},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"Refuse to answer\",\"NumericValue\":7},{\"ToolTip\":\"Don’t know\",\"Label\":\"Don’t know\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq028",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>IB-7\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq028a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "IF CHILD WAS NOT ENROLLED IN SCHOOL OR HOMESCHOOL OR DID NOT HAVE A JOB IN LAST YEAR, CODE “8” IN Q 29, THEN GO TO Q 31",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "How often did drinking alcohol keep you from doing things or going places with other [children/people your age]? Would you say: a lot of the time, some of the time, or hardly ever?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"A lot of the time\",\"Label\":\"A lot of the time\",\"NumericValue\":3},{\"ToolTip\":\"Some of the time\",\"Label\":\"Some of the time\",\"NumericValue\":2},{\"ToolTip\":\"Hardly ever\",\"Label\":\"Hardly ever\",\"NumericValue\":1},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"Refuse to answer\",\"NumericValue\":7},{\"ToolTip\":\"Don’t know\",\"Label\":\"Don’t know\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq029",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>IB-8\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When the problems were worst, did drinking alcohol [make it difficult for you to do your schoolwork or cause problems with your grades/make it difficult for you to do your work]?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq029a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "IF CHILD WAS NOT ENROLLED IN SCHOOL OR DID NOT HAVE A JOB IN LAST YEAR, CODE “8” IN Q 30, THEN GO TO Q 31",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "How bad were the problems you had with your [schoolwork/work] because of this? Would you say: very bad, bad, or not too bad?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"Very bad\",\"Label\":\"Very bad\",\"NumericValue\":3},{\"ToolTip\":\"Bad\",\"Label\":\"Bad\",\"NumericValue\":2},{\"ToolTip\":\"Not too bad\",\"Label\":\"Not too bad\",\"NumericValue\":1},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq030",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+	"PostFormula" : "Branching.Set(\"0>yalq031\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "At that time, did drinking alcohol cause your [teachers/boss] to be annoyed or upset with you?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq030a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "How often [were/was] your [teachers/boss] annoyed or upset with you because of this? Would you say: a lot of the time, some of the time, or hardly ever?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"Very bad\",\"Label\":\"Very bad\",\"NumericValue\":3},{\"ToolTip\":\"Bad\",\"Label\":\"Bad\",\"NumericValue\":2},{\"ToolTip\":\"Not too bad\",\"Label\":\"Not too bad\",\"NumericValue\":1},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq031",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq032\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When the problems were worst, did your use of alcohol make you feel bad or make you feel upset?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq031a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "How bad did drinking alcohol make you feel? Would you say: very bad, bad, or not too bad?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"Very bad\",\"Label\":\"Very bad\",\"NumericValue\":3},{\"ToolTip\":\"Bad\",\"Label\":\"Bad\",\"NumericValue\":2},{\"ToolTip\":\"Not too bad\",\"Label\":\"Not too bad\",\"NumericValue\":1},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq032",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalq033\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year – that is, since [[NAME EVENT]/[NAME CURRENT MONTH] of last year] – have you been to see someone at a hospital or a clinic or at their office because you [NAME [ ] RESPONSES IN Q 2–20 AND NOTES 2-7]?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq032a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq034\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Do you have an appointment set up to see someone for help with any of these problems?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq033",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "ALCOHOL (Youth)",
+				"FullHeading": "<b>ALCOHOL: Youth</b>",
+				"AloudColHeading": "<b>OPTIONAL DETAILS", 
+				"SummaryHeading" : "Alcohol",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+            },
+              {
+			"Name" : "pALq033_1",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "ALCOHOL (Youth)",
+				"FullHeading": "<b>ALCOHOL: Youth</b>",
+				"AloudColHeading": "<b>OPTIONAL DETAILS",
+				"ReadAloud": "Profession:",
+                "Advice": "(WRITE IN:)",
+				"SummaryHeading" : "Alcohol",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+            },
+              {
+			"Name" : "pALq033_2",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "ALCOHOL (Youth)",
+				"FullHeading": "<b>ALCOHOL: Youth</b>",
+				"AloudColHeading": "<b>OPTIONAL DETAILS",
+				"ReadAloud": "Address:",
+                "Advice": "(WRITE IN:)",
+				"SummaryHeading" : "Alcohol",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+            },
+              {
+			"Name" : "yalq034",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "In the last year, did you attend a self-help group meeting like “AA” or AlaTeen because of drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalnote08",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>EOM\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "WAS [AGE/GRADE] GIVEN IN Q 1A CHILD’S CURRENT [AGE/GRADE]?(i.e. age at first use - the same as now)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalnote09",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+               		 "PageBreak": "True",
+              		 "PostFormula" : " Branching.Set(\"0>EOM\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "WAS A ¥ RESPONSE CODED IN Q 1B?   (did first use happen more than a year ago?)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq035",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>EOM\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "I just asked you some questions about drinking in the last year. Now I would like you to think about your whole life.    Thinking about your whole life, was there ever a time when you drank more than you did in the last year?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq036",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>ADHD2\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Thinking about your whole life, how old were you when you were drinking the most?   <i>(INTERVIEWER: IF MORE THAN ONE YEAR IS REPORTED, ASK: “During which single year of age were you drinking the most?” IF MORE THAN ONE YEAR STILL REPORTED, ENTER YOUNGEST AGE.)</i>",
+                "Advice": "CODE AGE",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq036_1",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "IF AGE NOT KNOWN, ASK: What grade were you in?",
+                "Advice": "CODE GRADE (44 = PRE-K, 55 = KINDERGARTEN, 13 = COLLEGE FRESHMAN, 14 = SOPHOMORE, 15 = JUNIOR, 16 = SENIOR, 17 = POST B.A.)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq036a",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "During the time when you were drinking the most, how many drinks in total would you usually have from Friday through Sunday – adding together beers, glasses of wine, straight or mixed liquor, and wine coolers?",
+                "Advice": "CODE NUMBER OF DRINKS (66 = 66 OR MORE DRINKS)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq036b",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "And how many drinks would you usually have in total from Monday through Thursday?",
+                "Advice": "CODE NUMBER OF DRINKS (66 = 66 OR MORE DRINKS)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalnote10",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+    				"PostFormula" : "Branching.Set(\"0>yalqnote12\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "WERE 2 OR MORE RESPONSES CODED IN Q 9–23 AND NOTES 2-7?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalqnote11",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalq037\");      Branching.Set(\"0>EOM\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "THIS IS AN OPTIONAL SKIP    CRITERIA HAVE BEEN MET FOR ALCOHOL USE DISORDER     WOULD YOU LIKE TO ASK ABOUT POSSIBLE MORE SEVERE EPISODES OF ALCOHOL USE DISORDER?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalnote12",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalq037\");            Branching.Set(\"0>EOM\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "THIS IS AN OPTIONAL SKIP    WOULD YOU LIKE TO ASK ABOUT POSSIBLE PAST EPISODES OF ALCOHOL USE DISORDER?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq037",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "For the next set of questions, I would like you to think back to the time in your life when you were drinking the most … when you were [INSERT AGE/GRADE FROM Q 36].   At that time, did you miss [school/work] to go drinking, or because you were hungover?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq038",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "At that time, did you go to [school/work] right after you had been drinking, or drink while you were at [school/work]?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq039",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "At that time, did you get into trouble at [school/work] or did you have problems [with your schoolwork/doing your job] because of drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq040",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When you were drinking the most, did you drink before you did something important or while you were doing something important ... like babysitting or working?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalnote13",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "WERE ONE OR MORE § RESPONSES CODED IN Q 37–40?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq041",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq042\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you get into arguments with your family or friends, or did any of your friends not want to be with you, because of how you acted when you drank?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq041a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Even though you had problems with your family or friends, did you drink anyway?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq042",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalnote14\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "At that time, did you get into any physical ﬁghts when you had been drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq042a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalnote14\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did this happen more than once?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq042b",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Even though you got into physical fights, did you drink alcohol anyway?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalnote14",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "WERE ONE OR MORE § RESPONSES CODED IN Q 41–42B?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq043",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq044\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you ever drink in situations where you could get hurt, like right before or while you were riding a bike, swimming or driving a car or motorcycle?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq043a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you do this more than once?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq044",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq045\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you get in trouble with the police when you were drunk or because you had been drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq044a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did this happen more than once?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq045",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq045a\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When you were drinking the most, did it ever seem that it took more and more alcohol to make you feel drunk?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq045a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When you were drinking the most, did it ever seem that the same amount of alcohol had less effect on you?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq046",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq047\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you often feel sick or nervous or tense when you cut down on or quit drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq046a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you ever drink or take medicine so that you wouldn’t feel nervous or sick?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq047",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq048\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "Did you ever try to stop drinking but found you couldn’t?",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq047a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you often feel you should quit or cut down on drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq048",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"0>yalq049\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you often drink more than you intended to?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq048a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you often end up drinking for a longer time than you had planned?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq049",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "When you were drinking the most, did you spend a lot of your time drinking or being hungover?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq050",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "Branching.Set(\"2>yalq051\");",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Have you ever felt such a strong desire or urge to drink that you could not keep from drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq050a",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did you ever want a drink so badly that you could not think about anything else?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq051",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Were there important things you didn’t do or activities you cut down on because of drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq052",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did drinking ever cause you to have physical problems or make health problems worse?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq053",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PostFormula" : "IF ANY [ ] RESPONSES WERE CODED IN Q 43–53 OR NOTES 13-14, CONTINUE     ALL OTHERS, GO TO NEXT MODULE",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Did drinking ever cause you to feel sad or depressed or very irritable?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq054",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "You said that you [NAME [ ] SYMPTOMS IN Q 43–53 AND NOTES 13-14]. How old were you when you first had a problem because of drinking?",
+                "Advice": "CODE AGE",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq054_1",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "IF AGE NOT KNOWN, ASK: What grade were you in?",
+                "Advice": "CODE GRADE (44 = PRE-K, 55 = KINDERGARTEN, 13 = COLLEGE FRESHMAN, 14 = SOPHOMORE, 15 = JUNIOR, 16 = SENIOR, 17 = POST B.A.)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq055",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "How old were you the last time you had a problem because of drinking?",
+                "Advice": "CODE AGE (88 = NEVER STOPPED)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq055_1",
+			"Type" : "text",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "IF AGE NOT KNOWN, ASK: What grade were you in?",
+                "Advice": "CODE GRADE (44 = PRE-K, 55 = KINDERGARTEN, 13 = COLLEGE FRESHMAN, 14 = SOPHOMORE, 15 = JUNIOR, 16 = SENIOR, 17 = POST B.A.)",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "\"\""
+				},
+				"SubEntities" : [{
+						"Name" : null,
+						"Type" : null,
+						"Properties" : {
+							"TextBoxType" : "alpha"
+						},
+						"SubEntities" : null
+					}
+				]
+			},
+              {
+			"Name" : "yalq056",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Not including the last twelve months, did you ever see a doctor, counselor, or some other person like that because of your drinking?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq057",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Not including the last twelve months, did you go to a group meeting like “AA” or AlaTeen because you drank?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            },
+              {
+			"Name" : "yalq058",
+			"Type" : "radio",
+			"Properties" : {
+				"AllowBlankResponse": "False",
+                "PageBreak": "True",
+				"PageHeader": "Alcohol (Youth)",
+				"ReadAloud": "Not including the last twelve months, did you feel really unhappy or did it bother you a great deal that you drank alcohol?",
+				"SummaryHeading" : "Alcohol",
+				"Description" : "",
+				"ResponseOptionsJson" : "[{\"ToolTip\":\"No\",\"Label\":\"0\",\"NumericValue\":0},{\"ToolTip\":\"Yes\",\"Label\":\"2\",\"NumericValue\":2},{\"ToolTip\":\"Refuse to answer\",\"Label\":\"7\",\"NumericValue\":7},{\"ToolTip\":\"Don't know\",\"Label\":\"9\",\"NumericValue\":9}]"
+				},
+              "SubEntities": null
+            }
+              ]
+            }
+          ]
+        }
+      ]
+    }

@@ -97,7 +97,15 @@ class StandardInputOutputTest(unittest.TestCase):
         self.assertEqual(expected, actual)
 
 
-class AInputOutputTest(StandardInputOutputTest):
+class Test1(StandardInputOutputTest):
+    """A standard test case"""
+
+    def test_convert(self):
+        """Test that works as expected."""
+        self.standard_test()
+
+
+class Test2(StandardInputOutputTest):
     """A standard test case"""
 
     def test_convert(self):

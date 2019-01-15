@@ -1,0 +1,508 @@
+list_name,name,label
+yalq001,0,No
+yalq001,2,Yes
+yalq001,7,Refuse to answer
+yalq001,9,Don't know
+yalq001b,0,No
+yalq001b,2,Yes
+yalq001b,7,Refuse to answer
+yalq001b,9,Don't know
+yalq001c,0,No
+yalq001c,2,Yes
+yalq001c,7,Refuse to answer
+yalq001c,9,Don't know
+yalq001d,0,No
+yalq001d,2,Yes
+yalq001d,7,Refuse to answer
+yalq001d,9,Don't know
+yalq001e,0,No
+yalq001e,2,Yes
+yalq001e,7,Refuse to answer
+yalq001e,9,Don't know
+yalq001f,0,No
+yalq001f,2,Yes
+yalq001f,7,Refuse to answer
+yalq001f,9,Don't know
+yalq001g,5,Almost every week (48–52)
+yalq001g,4,More than half the weeks (30–47)
+yalq001g,3,About half the weeks (23–29)
+yalq001g,2,"On average, at least one week a month (12–26)"
+yalq001g,1,Less than one week a month (1–11)
+yalq001g,7,Refuse to answer
+yalq001g,9,Don’t know
+yalq001h,0,No
+yalq001h,2,Yes
+yalq001h,7,Refuse to answer
+yalq001h,9,Don't know
+yalq001l,0,No
+yalq001l,2,Yes
+yalq001l,7,Refuse to answer
+yalq001l,9,Don't know
+yalq001n,0,No
+yalq001n,2,Yes
+yalq001n,7,Refuse to answer
+yalq001n,9,Don't know
+yalnote01,0,No
+yalnote01,2,Yes
+yalq002,0,No
+yalq002,2,Yes
+yalq002,7,Refuse to answer
+yalq002,9,Don't know
+yalq002a,0,No
+yalq002a,2,Yes
+yalq002a,7,Refuse to answer
+yalq002a,9,Don't know
+yalq003,0,No
+yalq003,2,Yes
+yalq003,7,Refuse to answer
+yalq003,9,Don't know
+yalq003a,0,No
+yalq003a,2,Yes
+yalq003a,7,Refuse to answer
+yalq003a,9,Don't know
+yalq004,0,No
+yalq004,2,Yes
+yalq004,7,Refuse to answer
+yalq004,9,Don't know
+yalq004a,0,No
+yalq004a,2,Yes
+yalq004a,7,Refuse to answer
+yalq004a,9,Don't know
+yalq005,0,No
+yalq005,2,Yes
+yalq005,7,Refuse to answer
+yalq005,9,Don't know
+yalq005a,0,No
+yalq005a,2,Yes
+yalq005a,7,Refuse to answer
+yalq005a,9,Don't know
+yalnote02,0,No
+yalnote02,2,Yes
+yalq006,0,No
+yalq006,2,Yes
+yalq006,7,Refuse to answer
+yalq006,9,Don't know
+yalq006a,0,No
+yalq006a,2,Yes
+yalq006a,7,Refuse to answer
+yalq006a,9,Don't know
+yalq007,0,No
+yalq007,2,Yes
+yalq007,7,Refuse to answer
+yalq007,9,Don't know
+yalq007a,0,No
+yalq007a,2,Yes
+yalq007a,7,Refuse to answer
+yalq007a,9,Don't know
+yalq008,0,No
+yalq008,2,Yes
+yalq008,7,Refuse to answer
+yalq008,9,Don't know
+yalq008a,0,No
+yalq008a,2,Yes
+yalq008a,7,Refuse to answer
+yalq008a,9,Don't know
+yalq008b,0,No
+yalq008b,2,Yes
+yalq008b,7,Refuse to answer
+yalq008b,9,Don't know
+yalnote03,0,No
+yalnote03,2,Yes
+yalq009,0,No
+yalq009,2,Yes
+yalq009,7,Refuse to answer
+yalq009,9,Don't know
+yalq009a,0,No
+yalq009a,2,Yes
+yalq009a,7,Refuse to answer
+yalq009a,9,Don't know
+yalq010,0,No
+yalq010,2,Yes
+yalq010,7,Refuse to answer
+yalq010,9,Don't know
+yalq010a,0,No
+yalq010a,2,Yes
+yalq010a,7,Refuse to answer
+yalq010a,9,Don't know
+yalq011,0,No
+yalq011,2,Yes
+yalq011,7,Refuse to answer
+yalq011,9,Don't know
+yalq011a,0,No
+yalq011a,2,Yes
+yalq011a,7,Refuse to answer
+yalq011a,9,Don't know
+yalq012,0,No
+yalq012,2,Yes
+yalq012,7,Refuse to answer
+yalq012,9,Don't know
+yalq013,0,No
+yalq013,2,Yes
+yalq013,7,Refuse to answer
+yalq013,9,Don't know
+yalq013a,0,No
+yalq013a,2,Yes
+yalq013a,7,Refuse to answer
+yalq013a,9,Don't know
+yalq013b,0,No
+yalq013b,2,Yes
+yalq013b,7,Refuse to answer
+yalq013b,9,Don't know
+yalq014,0,No
+yalq014,2,Yes
+yalq014,7,Refuse to answer
+yalq014,9,Don't know
+yalq014a,0,No
+yalq014a,2,Yes
+yalq014a,7,Refuse to answer
+yalq014a,9,Don't know
+yalq015,0,No
+yalq015,2,Yes
+yalq015,7,Refuse to answer
+yalq015,9,Don't know
+yalq015a,0,No
+yalq015a,2,Yes
+yalq015a,7,Refuse to answer
+yalq015a,9,Don't know
+yalq015b,0,No
+yalq015b,2,Yes
+yalq015b,7,Refuse to answer
+yalq015b,9,Don't know
+yalq016,0,No
+yalq016,2,Yes
+yalq016,7,Refuse to answer
+yalq016,9,Don't know
+yalq016a,0,No
+yalq016a,2,Yes
+yalq016a,7,Refuse to answer
+yalq016a,9,Don't know
+yalq017,0,No
+yalq017,2,Yes
+yalq017,7,Refuse to answer
+yalq017,9,Don't know
+yalq018,0,No
+yalq018,2,Yes
+yalq018,7,Refuse to answer
+yalq018,9,Don't know
+yalq018a,0,No
+yalq018a,2,Yes
+yalq018a,7,Refuse to answer
+yalq018a,9,Don't know
+yalnote04,0,No
+yalnote04,2,Yes
+yalq019,0,No
+yalq019,2,Yes
+yalq019,7,Refuse to answer
+yalq019,9,Don't know
+yalq019a,0,No
+yalq019a,2,Yes
+yalq019a,7,Refuse to answer
+yalq019a,9,Don't know
+yalq020,0,No
+yalq020,2,Yes
+yalq020,7,Refuse to answer
+yalq020,9,Don't know
+yalq020a,0,No
+yalq020a,2,Yes
+yalq020a,7,Refuse to answer
+yalq020a,9,Don't know
+yalq021,0,No
+yalq021,2,Yes
+yalq021,7,Refuse to answer
+yalq021,9,Don't know
+yalq021a,0,No
+yalq021a,2,Yes
+yalq021a,7,Refuse to answer
+yalq021a,9,Don't know
+yalnote05,0,No
+yalnote05,2,Yes
+yalq022,0,No
+yalq022,2,Yes
+yalq022,7,Refuse to answer
+yalq022,9,Don't know
+yalq022a,0,No
+yalq022a,2,Yes
+yalq022a,7,Refuse to answer
+yalq022a,9,Don't know
+yalq022b,0,No
+yalq022b,2,Yes
+yalq022b,7,Refuse to answer
+yalq022b,9,Don't know
+yalq022c,0,No
+yalq022c,2,Yes
+yalq022c,7,Refuse to answer
+yalq022c,9,Don't know
+yalq022d,0,No
+yalq022d,2,Yes
+yalq022d,7,Refuse to answer
+yalq022d,9,Don't know
+yalnote06,0,No
+yalnote06,2,Yes
+yalq022e,0,No
+yalq022e,2,Yes
+yalq022e,7,Refuse to answer
+yalq022e,9,Don't know
+yalq022f,0,No
+yalq022f,2,Yes
+yalq022f,7,Refuse to answer
+yalq022f,9,Don't know
+yalq022g,0,No
+yalq022g,2,Yes
+yalq022g,7,Refuse to answer
+yalq022g,9,Don't know
+yalq022h,0,No
+yalq022h,2,Yes
+yalq022h,7,Refuse to answer
+yalq022h,9,Don't know
+yalq022i,0,No
+yalq022i,2,Yes
+yalq022i,7,Refuse to answer
+yalq022i,9,Don't know
+yalq022j,0,No
+yalq022j,2,Yes
+yalq022j,7,Refuse to answer
+yalq022j,9,Don't know
+yalq022k,0,No
+yalq022k,2,Yes
+yalq022k,7,Refuse to answer
+yalq022k,9,Don't know
+yalq022l,0,No
+yalq022l,2,Yes
+yalq022l,7,Refuse to answer
+yalq022l,9,Don't know
+yalq023,0,No
+yalq023,2,Yes
+yalq023,7,Refuse to answer
+yalq023,9,Don't know
+yalnote07,0,No
+yalnote07,2,Yes
+yalq024,0,No
+yalq024,2,Yes
+yalq024,7,Refuse to answer
+yalq024,9,Don't know
+yalq025a,0,No
+yalq025a,2,Yes
+yalq025a,7,Refuse to answer
+yalq025a,9,Don't know
+yalq025b,0,No
+yalq025b,2,Yes
+yalq025b,7,Refuse to answer
+yalq025b,9,Don't know
+yalq025c,0,No
+yalq025c,2,Yes
+yalq025c,7,Refuse to answer
+yalq025c,9,Don't know
+yalq025e,0,No
+yalq025e,2,Yes
+yalq025e,7,Refuse to answer
+yalq025e,9,Don't know
+yalq026,0,No
+yalq026,2,Yes
+yalq026,7,Refuse to answer
+yalq026,9,Don't know
+yalq026a,3,A lot of the time
+yalq026a,2,Some of the time
+yalq026a,1,Hardly ever
+yalq026a,7,Refuse to answer
+yalq026a,9,Don’t know
+yalq027,0,No
+yalq027,2,Yes
+yalq027,7,Refuse to answer
+yalq027,9,Don't know
+yalq027a,3,A lot of the time
+yalq027a,2,Some of the time
+yalq027a,1,Hardly ever
+yalq027a,7,Refuse to answer
+yalq027a,9,Don’t know
+yalq028,0,No
+yalq028,2,Yes
+yalq028,7,Refuse to answer
+yalq028,9,Don't know
+yalq028a,3,A lot of the time
+yalq028a,2,Some of the time
+yalq028a,1,Hardly ever
+yalq028a,7,Refuse to answer
+yalq028a,9,Don’t know
+yalq029,0,No
+yalq029,2,Yes
+yalq029,7,Refuse to answer
+yalq029,9,Don't know
+yalq029a,3,Very bad
+yalq029a,2,Bad
+yalq029a,1,Not too bad
+yalq029a,7,Refuse to answer
+yalq029a,9,Don't know
+yalq030,0,No
+yalq030,2,Yes
+yalq030,7,Refuse to answer
+yalq030,9,Don't know
+yalq030a,3,Very bad
+yalq030a,2,Bad
+yalq030a,1,Not too bad
+yalq030a,7,Refuse to answer
+yalq030a,9,Don't know
+yalq031,0,No
+yalq031,2,Yes
+yalq031,7,Refuse to answer
+yalq031,9,Don't know
+yalq031a,3,Very bad
+yalq031a,2,Bad
+yalq031a,1,Not too bad
+yalq031a,7,Refuse to answer
+yalq031a,9,Don't know
+yalq032,0,No
+yalq032,2,Yes
+yalq032,7,Refuse to answer
+yalq032,9,Don't know
+yalq032a,0,No
+yalq032a,2,Yes
+yalq032a,7,Refuse to answer
+yalq032a,9,Don't know
+yalq034,0,No
+yalq034,2,Yes
+yalq034,7,Refuse to answer
+yalq034,9,Don't know
+yalnote08,0,No
+yalnote08,2,Yes
+yalnote08,7,Refuse to answer
+yalnote08,9,Don't know
+yalnote09,0,No
+yalnote09,2,Yes
+yalnote09,7,Refuse to answer
+yalnote09,9,Don't know
+yalq035,0,No
+yalq035,2,Yes
+yalq035,7,Refuse to answer
+yalq035,9,Don't know
+yalnote10,0,No
+yalnote10,2,Yes
+yalqnote11,0,No
+yalqnote11,2,Yes
+yalnote12,0,No
+yalnote12,2,Yes
+yalnote12,7,Refuse to answer
+yalnote12,9,Don't know
+yalq037,0,No
+yalq037,2,Yes
+yalq037,7,Refuse to answer
+yalq037,9,Don't know
+yalq038,0,No
+yalq038,2,Yes
+yalq038,7,Refuse to answer
+yalq038,9,Don't know
+yalq039,0,No
+yalq039,2,Yes
+yalq039,7,Refuse to answer
+yalq039,9,Don't know
+yalq040,0,No
+yalq040,2,Yes
+yalq040,7,Refuse to answer
+yalq040,9,Don't know
+yalnote13,0,No
+yalnote13,2,Yes
+yalq041,0,No
+yalq041,2,Yes
+yalq041,7,Refuse to answer
+yalq041,9,Don't know
+yalq041a,0,No
+yalq041a,2,Yes
+yalq041a,7,Refuse to answer
+yalq041a,9,Don't know
+yalq042,0,No
+yalq042,2,Yes
+yalq042,7,Refuse to answer
+yalq042,9,Don't know
+yalq042a,0,No
+yalq042a,2,Yes
+yalq042a,7,Refuse to answer
+yalq042a,9,Don't know
+yalq042b,0,No
+yalq042b,2,Yes
+yalq042b,7,Refuse to answer
+yalq042b,9,Don't know
+yalnote14,0,No
+yalnote14,2,Yes
+yalq043,0,No
+yalq043,2,Yes
+yalq043,7,Refuse to answer
+yalq043,9,Don't know
+yalq043a,0,No
+yalq043a,2,Yes
+yalq043a,7,Refuse to answer
+yalq043a,9,Don't know
+yalq044,0,No
+yalq044,2,Yes
+yalq044,7,Refuse to answer
+yalq044,9,Don't know
+yalq044a,0,No
+yalq044a,2,Yes
+yalq044a,7,Refuse to answer
+yalq044a,9,Don't know
+yalq045,0,No
+yalq045,2,Yes
+yalq045,7,Refuse to answer
+yalq045,9,Don't know
+yalq045a,0,No
+yalq045a,2,Yes
+yalq045a,7,Refuse to answer
+yalq045a,9,Don't know
+yalq046,0,No
+yalq046,2,Yes
+yalq046,7,Refuse to answer
+yalq046,9,Don't know
+yalq046a,0,No
+yalq046a,2,Yes
+yalq046a,7,Refuse to answer
+yalq046a,9,Don't know
+yalq047,0,No
+yalq047,2,Yes
+yalq047,7,Refuse to answer
+yalq047,9,Don't know
+yalq047a,0,No
+yalq047a,2,Yes
+yalq047a,7,Refuse to answer
+yalq047a,9,Don't know
+yalq048,0,No
+yalq048,2,Yes
+yalq048,7,Refuse to answer
+yalq048,9,Don't know
+yalq048a,0,No
+yalq048a,2,Yes
+yalq048a,7,Refuse to answer
+yalq048a,9,Don't know
+yalq049,0,No
+yalq049,2,Yes
+yalq049,7,Refuse to answer
+yalq049,9,Don't know
+yalq050,0,No
+yalq050,2,Yes
+yalq050,7,Refuse to answer
+yalq050,9,Don't know
+yalq050a,0,No
+yalq050a,2,Yes
+yalq050a,7,Refuse to answer
+yalq050a,9,Don't know
+yalq051,0,No
+yalq051,2,Yes
+yalq051,7,Refuse to answer
+yalq051,9,Don't know
+yalq052,0,No
+yalq052,2,Yes
+yalq052,7,Refuse to answer
+yalq052,9,Don't know
+yalq053,0,No
+yalq053,2,Yes
+yalq053,7,Refuse to answer
+yalq053,9,Don't know
+yalq056,0,No
+yalq056,2,Yes
+yalq056,7,Refuse to answer
+yalq056,9,Don't know
+yalq057,0,No
+yalq057,2,Yes
+yalq057,7,Refuse to answer
+yalq057,9,Don't know
+yalq058,0,No
+yalq058,2,Yes
+yalq058,7,Refuse to answer
+yalq058,9,Don't know
